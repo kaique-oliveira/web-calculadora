@@ -16,7 +16,7 @@ Calculadora
 
 | GIF   | YouTube | 
 :--------:| :---------:|
-| <img src="src/assets/app-calculadora.gif" width="200"> | [<img src="src/assets/cover-youtube.png" width="200">](https://youtu.be/M7MRxgdw8cY "Assistir ao video") |
+| <img src="src/assets/app-calculadora.gif" width="400"> | [<img src="src/assets/cover-youtube.png" width="400">](https://youtu.be/M7MRxgdw8cY "Assistir ao video") |
 
 
 ## Protótipo figma
