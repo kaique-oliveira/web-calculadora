@@ -7,16 +7,16 @@ Calculadora
   <br>
 </h1>
 
-<h4 align="center">Um aplicativo de calculadora básica utilizando <a href="https://pt-br.react.dev/blog/2023/03/16/introducing-react-dev" target="_blank">React JS</a> e <a href="https://www.electronjs.org" target="_blank">Electron</a>.</h4>
+<h4 align="center">Um aplicativo de calculadora básica utilizando <a href="https://pt-br.react.dev/blog/2023/03/16/introducing-react-dev" target="_blank">React JS</a> e <a href="https://www.electronjs.org" target="_blank">Electron JS</a>.</h4>
 
 
 
 
-<p>Clique no player para visualizar em alta qualidade 🖥️.</p>
+<p>Clique no player para visualizar em alta qualidade no YouTube 🖥️.</p>
 
 | GIF   | YouTube | 
 :--------:| :---------:|
-| <img src="src/assets/app-calculadora.gif" width="200"> | [<img src="src/assets/cover-youtube.png" width="200">](https://youtube.com/shorts/giaztgArb2g?si=0F3dF1EJGt4g6jwT "Assistir ao video") |
+| <img src="src/assets/app-calculadora.gif" width="200"> | [<img src="src/assets/cover-youtube.png" width="200">](https://youtu.be/M7MRxgdw8cY "Assistir ao video") |
 
 
 ## Protótipo figma
@@ -49,36 +49,34 @@ Na sua linha de comando:
 
 ```bash
 # Clone o repositorio
-$ git clone https://github.com/kaique-oliveira/app-calculadora.git
+$ git clone https://github.com/kaique-oliveira/web-calculadora.git
 
 # Entre no repositório
-$ cd app-calculadora
+$ cd web-calculadora
 
 # Instalar dependências
 $ npm install
 
 # Execute o aplicativo
-$ npm start 
+$ npm run start 
 
-# Execute o aplicativo direto no emulador IOS
-$ npm run ios 
+# Para gerar o instalavel do Windows
+$ npm run build-win
 
-# Execute o aplicativo direto no emulador Android
-$ npm run android 
+# Para gerar o instalavel do Mac OS
+$ npm run build-mac
 ```
 
 ## Credits
 
 Principais frameworks e bibliotecas utilizados:
 
-- [Expo](https://expo.dev)
-- [React-Native](https://reactnative.dev)
+- [React-JS](https://pt-br.react.dev/blog/2023/03/16/introducing-react-dev)
+- [Electron-JS](https://www.electronjs.org)
 - [TypeScript](https://www.typescriptlang.org)
 - [Styled-Components](https://styled-components.com)
 - [Phosphor-React-Native](https://github.com/duongdev/phosphor-react-native)
-- [React-Native-Linear-Gradient](https://www.npmjs.com/package/react-native-linear-gradient)
-- [React-Native-Safe-Area-Context](https://www.npmjs.com/package/react-native-safe-area-context)
-- [React-Native-SVG](https://www.npmjs.com/package/react-native-svg)
+- [Vite](https://vitejs-dev.translate.goog/?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt-BR&_x_tr_pto=sc)
 
 
 ---

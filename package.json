@@ -15,7 +15,7 @@
     }
   },
   "scripts": {
-    "dev": "npm run start-web & npm run start-electron",
+    "start": "npm run start-web & npm run start-electron",
     "start-web": "vite",
     "start-electron": "electron .",
     "build-mac": "electron-builder --mac",
@@ -23,7 +23,6 @@
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.15",
-    "concurrently": "^8.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^6.1.8"
