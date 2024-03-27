@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 393px;
-  height: 652px;
+  width: 100%;
+  height: 100%;
 
   background-color: ${({ theme }) => theme.COLORS.DEFAULT};
-  border-radius: 32px;
+  border-radius: 16px;
 
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@ export const Container = styled.div`
 
 export const WrapperButtons = styled.div`
   width: 100%;
-  height: 472px;
+  height: 450px;
   padding: 32px;
 
   display: flex;
@@ -28,7 +28,7 @@ export const WrapperButtons = styled.div`
   gap: 22px;
 
   background-color: ${({ theme }) => theme.COLORS.GRAY_100};
-  border-radius: 32px;
+  border-radius: 16px;
 `;
 
 export const GroupButtonsDefault = styled.div`
@@ -93,6 +93,14 @@ export const WrapperPronpt = styled.div`
 export const History = styled.div`
   height: 32px;
   width: 100%;
+
+  -webkit-app-region: no-drag;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  & > :hover {
+    color: rgba(238, 19, 145, 0.6);
+  }
 
   display: flex;
   justify-content: flex-end;

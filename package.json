@@ -2,15 +2,28 @@
   "name": "web-calculadora",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "main": "main.js",
+  "author": "Kaique Oliveira Antonio",
+  "build": {
+    "appId": "kaique.id",
+    "mac": {
+      "category": "kaique.app.category.type",
+      "icon": "./public/assets/equal.icns"
+    },
+    "win": {
+      "icon": "./public/assets/equal.png"
+    }
+  },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "dev": "npm run start-web & npm run start-electron",
+    "start-web": "vite",
+    "start-electron": "electron .",
+    "build-mac": "electron-builder --mac",
+    "build-win": "electron-builder --win --x64"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.15",
+    "concurrently": "^8.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^6.1.8"
@@ -21,6 +34,8 @@
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.2.1",
+    "electron": "^29.1.5",
+    "electron-builder": "^24.13.3",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",

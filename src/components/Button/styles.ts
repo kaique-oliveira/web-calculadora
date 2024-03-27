@@ -9,6 +9,7 @@ type Props = {
 export const Container = styled.button<Props>`
   width: 60px;
   height: 60px;
+  -webkit-app-region: no-drag;
 
   border-radius: 20px;
   box-shadow: none;

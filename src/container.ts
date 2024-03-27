@@ -8,10 +8,5 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  background: rgb(238, 19, 145);
-  background: linear-gradient(
-    140deg,
-    rgba(238, 19, 145, 1) 0%,
-    rgba(253, 86, 51, 1) 100%
-  );
+  background-color: transparent;
 `;

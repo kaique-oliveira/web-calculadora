@@ -35,8 +35,6 @@ export function Home() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [input, setInput] = useState<string>("");
   const [history, setHistory] = useState<string[]>([]);
-  const [lineOperation, setLineOperation] = useState<string[]>([]);
-  // const [numbersOperation, setNumbersOperation] = useState<number[]>([])
 
   function handleChangeTheme() {
     if (getTheme === "light") {
@@ -52,7 +50,7 @@ export function Home() {
 
   function handleDefineNumbers(key: string) {
     if (key.match(/\d+/) || key.match(/[,]/)) {
-      setInput(input + key);
+      setInput(`${input}${key}`);
     } else if (key.match(/[\'+\=\/\*\-]/) || key === "Enter") {
       if (key === "=" || key === "Enter") {
         handleFinishOperation();
@@ -67,33 +65,48 @@ export function Home() {
   }
 
   function handleDefineOperator(operator: TypeOperator) {
-    setHistory([input, operator]);
-    setLineOperation([...lineOperation, input, operator]);
-    setInput("");
+    if (input.match(/\d+/)) {
+      setInput(`${input} ${operator} `);
+    }
   }
 
   function handleFinishOperation() {
-    const operation = lineOperation.reduce(
-      (prev, his) => prev + his.replace(/,/g, "."),
-      ""
-    );
+    try {
+      if (
+        input
+          .replace(/,/g, ".")
+          .match(/^\s*(-?\d*\.?\d+)\s*([-+*/]\s*-?\d*\.?\d+\s*)+$/)
+      ) {
+        const result = eval(input.replace(/,/g, "."));
+        setHistory([
+          input.replace(".", ","),
+          "=",
+          `${result}`.includes(".")
+            ? Number(`${result}`).toFixed(2).replace(".", ",")
+            : `${result}`,
+        ]);
 
-    const result = eval(operation + input.replace(/,/g, "."));
-    setHistory([
-      ...history,
-      input.replace(/,/g, "."),
-      "=",
-      `${result}`.replace(".", ","),
-    ]);
-
-    setInput(`${result}`.replace(".", ","));
-    setLineOperation([]);
+        if (`${result}`.includes(".")) {
+          setInput(Number(`${result}`).toFixed(2).replace(".", ","));
+        } else {
+          setInput(`${result}`);
+        }
+      }
+    } catch (error) {
+      handleClearAll();
+    }
   }
 
   function handleClearAll() {
     setHistory([]);
     setInput("");
-    setLineOperation([]);
+  }
+
+  function backHistory() {
+    const his = history.map((x) => ` ${x} `);
+
+    setInput(his.slice(0, his.indexOf(" = ")).join(" ").trim());
+    setHistory([]);
   }
 
   useEffect(() => {
@@ -104,7 +117,7 @@ export function Home() {
 
   return (
     <Container>
-      <History>
+      <History onClick={backHistory}>
         <span>{history.length > 0 && history.map((x) => ` ${x} `)}</span>
         <ClockCounterClockwise color={COLORS.GRAY_400} size={22} />
       </History>
