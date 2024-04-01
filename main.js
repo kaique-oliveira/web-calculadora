@@ -4,6 +4,7 @@ const createWindow = () => {
     const win = new BrowserWindow({
       width: 350,
       height: 600,
+
       resizable: false,
       titleBarStyle: 'hidden',
       titleBarOverlay: {
